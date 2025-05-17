@@ -52,7 +52,7 @@ public class AutorServicio {
     private void validar (String nombre) throws MiException{
         if (nombre.isEmpty() || nombre==null){
 
-            throw new MiException("El titulo no puede ser nulo");
+            throw new MiException("El nombre no puede ser nulo");
         }
     }
 }
