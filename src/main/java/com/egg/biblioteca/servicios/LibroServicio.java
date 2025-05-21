@@ -87,7 +87,7 @@ public class LibroServicio {
         libroRepositorio.save(libro);
         }
     }
-    private void validar(Long isbn, String titulo, Integer ejemplares, String idAutor, String idEditoriales) throws MiException{
+    private void validar(Long isbn, String titulo, Integer ejemplares, String idAutor, String idEditorial) throws MiException{
 if(isbn==null){
             throw new MiException ("EL isbn NO PUEDE SER NULO");
         }
