@@ -6,18 +6,24 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.egg.biblioteca.entidades.Autor;
 import com.egg.biblioteca.excepciones.MiException;
 import com.egg.biblioteca.repositorios.AutorRepositorio;
 
-import jakarta.transaction.Transactional;
 
 @Service
 public class AutorServicio {
 
     @Autowired
     private AutorRepositorio autorRepositorio;
+
+
+ @Transactional(readOnly = true)
+    public Autor  getOne(String id){
+        return autorRepositorio.getReferenceById(id);
+    }
 
 
     @Transactional
@@ -43,7 +49,7 @@ public class AutorServicio {
         if(respuesta.isPresent()){
 
             Autor autor = respuesta.get();
-
+            autor.setNombre(nombre);
             autorRepositorio.save(autor);   
         }
 
