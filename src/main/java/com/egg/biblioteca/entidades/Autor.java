@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="autores")
 public class Autor {
-@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     
