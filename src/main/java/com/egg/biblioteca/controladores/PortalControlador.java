@@ -43,7 +43,7 @@ public class PortalControlador {
             return "index.html";
 
         } catch (MiException ex) {
-            Logger.getLogger(PortalControlador.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(PortalControlador.class.getName()).log(Level.SEVERE, null, ex);
 
             modelo.put("error", ex.getMessage());
             return "registro.html";
